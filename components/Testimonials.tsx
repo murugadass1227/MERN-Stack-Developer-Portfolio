@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Quote, Star } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
+import Image from 'next/image'
 
 const Testimonials = () => {
   const testimonials = [
@@ -99,7 +100,7 @@ const Testimonials = () => {
                     ))}
                   </div>
                   <p className="text-sm sm:text-base text-muted-foreground mb-6 flex-grow leading-relaxed">
-                    "{testimonial.content}"
+                    &ldquo;{testimonial.content}&rdquo;
                   </p>
                   <div className="flex items-center gap-3 mt-auto pt-4 border-t border-border">
                     <motion.div
@@ -108,11 +109,12 @@ const Testimonials = () => {
                       transition={{ type: 'spring', stiffness: 300 }}
                     >
                       <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${testimonial.gradient} p-0.5`}>
-                        <div className="w-full h-full rounded-full bg-card flex items-center justify-center overflow-hidden">
-                          <img
+                        <div className="w-full h-full rounded-full bg-card flex items-center justify-center overflow-hidden relative">
+                          <Image
                             src={testimonial.avatar}
                             alt={testimonial.name}
-                            className="w-full h-full object-cover"
+                            fill
+                            className="object-cover"
                             loading="lazy"
                           />
                         </div>

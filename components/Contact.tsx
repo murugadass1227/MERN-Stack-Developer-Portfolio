@@ -67,7 +67,7 @@ const Contact = () => {
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-4 sm:mb-6"></div>
           <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-            I'm always open to discussing new projects, creative ideas, or opportunities to
+            I&apos;m always open to discussing new projects, creative ideas, or opportunities to
             be part of your visions. Feel free to reach out!
           </p>
         </motion.div>
