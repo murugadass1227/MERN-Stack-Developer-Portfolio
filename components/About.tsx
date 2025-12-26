@@ -71,7 +71,7 @@ const About = () => {
           >
             <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">Professional Summary</h3>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-              Results-driven <strong>MERN Stack Developer</strong> with 1+ years of
+              Results-driven <strong>MERN Stack Developer</strong> with 2+ years of
               professional experience in building scalable, high-performance web
               applications. Strong expertise in developing modern, responsive user
               interfaces using <strong>React.js, Redux, Next.js</strong> and{' '}

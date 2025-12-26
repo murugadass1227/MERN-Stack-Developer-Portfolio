@@ -48,18 +48,33 @@ const Navbar = () => {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
-    setIsMobileMenuOpen(false)
     const targetId = href.replace('#', '')
-    const element = document.getElementById(targetId)
-    if (element) {
-      const offset = 80
-      const elementPosition = element.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - offset
+    setActiveSection(targetId)
+    
+    // Close mobile menu first
+    const wasMobileMenuOpen = isMobileMenuOpen
+    setIsMobileMenuOpen(false)
+    
+    // Scroll to element with proper timing
+    const scrollToElement = () => {
+      const element = document.getElementById(targetId)
+      if (element) {
+        const offset = 80
+        const elementTop = element.offsetTop
+        const offsetPosition = elementTop - offset
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      })
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: 'smooth'
+        })
+      }
+    }
+    
+    // If mobile menu was open, wait for animation to complete
+    if (wasMobileMenuOpen) {
+      setTimeout(scrollToElement, 200)
+    } else {
+      scrollToElement()
     }
   }
 
@@ -207,7 +222,7 @@ const Navbar = () => {
                       key={item.name}
                       href={item.href}
                       onClick={(e) => handleNavClick(e, item.href)}
-                      className={`block px-4 py-3 text-base font-medium rounded-lg mx-2 transition-all duration-200 ${
+                      className={`block px-4 py-3 text-base font-medium rounded-lg mx-2 transition-all duration-200 cursor-pointer ${
                         isActive
                           ? 'text-primary bg-primary/10 border-l-2 border-primary'
                           : 'text-foreground/80 hover:text-foreground hover:bg-accent/50'
@@ -215,6 +230,7 @@ const Navbar = () => {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.05 }}
+                      whileTap={{ scale: 0.95 }}
                     >
                       {item.name}
                     </motion.a>
