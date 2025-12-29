@@ -159,12 +159,12 @@ const Hero = () => {
               Specialized in{' '}
               <TypingEffect
                 words={[
-                  'React.js',
-                  'Next.js',
-                  'Node.js',
-                  'MongoDB',
-                  'TypeScript',
-                  'Full Stack Development',
+                  'MERN Stack Developer',
+                  'React JS Developer',
+                  'Next JS Developer',
+                  'Node JS Developer',
+                  'MongoDB Developer',
+                  'TypeScript Developer',
                 ]}
                 className="text-primary"
               />

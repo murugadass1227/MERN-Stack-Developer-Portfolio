@@ -83,10 +83,12 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 relative transition-[background-color,box-shadow,border-color,transform] duration-300 ease-out ${
         isScrolled
-          ? 'bg-background/95 backdrop-blur-xl shadow-lg border-b border-border/40'
+          ? 'bg-background/75 backdrop-blur-xl shadow-[0_10px_35px_rgba(0,0,0,0.14)] border-b border-border/50 supports-[backdrop-filter]:bg-background/60'
           : 'bg-transparent'
+      } after:pointer-events-none after:absolute after:inset-x-0 after:top-0 after:h-full after:opacity-0 after:transition-opacity after:duration-300 after:bg-gradient-to-b after:from-primary/10 after:via-transparent after:to-transparent ${
+        isScrolled ? 'after:opacity-100' : ''
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
