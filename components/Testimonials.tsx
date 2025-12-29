@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { Quote, Star } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
-import Image from 'next/image'
 
 const Testimonials = () => {
   const testimonials = [
@@ -13,7 +12,6 @@ const Testimonials = () => {
       company: 'Tech Innovations',
       content: 'Murugadass is an exceptional developer who delivered high-quality work on time. His expertise in React and Node.js is outstanding, and he brings creative solutions to complex problems.',
       rating: 5,
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=John',
       gradient: 'from-blue-500 to-cyan-500',
     },
     {
@@ -22,7 +20,6 @@ const Testimonials = () => {
       company: 'Digital Solutions',
       content: 'Working with Murugadass was a pleasure. He demonstrated strong technical skills, excellent communication, and always went above and beyond to ensure project success.',
       rating: 5,
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah',
       gradient: 'from-pink-500 to-rose-500',
     },
     {
@@ -31,7 +28,6 @@ const Testimonials = () => {
       company: 'StartupHub',
       content: 'Murugadass transformed our vision into a beautiful, scalable web application. His attention to detail and commitment to best practices is remarkable. Highly recommended!',
       rating: 5,
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Michael',
       gradient: 'from-purple-500 to-indigo-500',
     },
     {
@@ -40,7 +36,6 @@ const Testimonials = () => {
       company: 'InnovateLab',
       content: 'Outstanding performance and professionalism. Murugadass consistently delivered clean, maintainable code and was always proactive in suggesting improvements.',
       rating: 5,
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Emily',
       gradient: 'from-green-500 to-emerald-500',
     },
   ]
@@ -109,14 +104,15 @@ const Testimonials = () => {
                       transition={{ type: 'spring', stiffness: 300 }}
                     >
                       <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${testimonial.gradient} p-0.5`}>
-                        <div className="w-full h-full rounded-full bg-card flex items-center justify-center overflow-hidden relative">
-                          <Image
-                            src={testimonial.avatar}
-                            alt={testimonial.name}
-                            fill
-                            className="object-cover"
-                            loading="lazy"
-                          />
+                        <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
+                          <span className="text-sm font-semibold text-foreground">
+                            {testimonial.name
+                              .split(' ')
+                              .map((n) => n[0])
+                              .join('')
+                              .toUpperCase()
+                              .slice(0, 2)}
+                          </span>
                         </div>
                       </div>
                       <motion.div

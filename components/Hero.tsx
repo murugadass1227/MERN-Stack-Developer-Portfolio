@@ -120,7 +120,7 @@ const Hero = () => {
             className="mb-6"
           >
             <motion.span
-              className="inline-block px-4 py-2 bg-primary/10 backdrop-blur-sm text-primary rounded-full text-sm font-medium mb-4 border border-primary/20"
+              className="inline-block px-4 mt-10 py-2 bg-primary/10 backdrop-blur-sm text-primary rounded-full text-sm font-medium mb-4 border border-primary/20"
               animate={{
                 boxShadow: [
                   '0 0 20px rgba(59, 130, 246, 0.3)',
