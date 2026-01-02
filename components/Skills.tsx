@@ -49,25 +49,25 @@ const Skills = () => {
     {
       title: 'APIs & Integration',
       icon: Cloud,
-      skills: ['RESTful APIs', 'Authentication', 'API Consumption'],
+      skills: ['RESTful APIs', 'Authentication', 'API Consumption', 'OpenAI API','Integration with Payama Payments API'],
       color: 'text-cyan-500',
     },
     {
       title: 'Version Control',
       icon: GitBranch,
-      skills: ['Git', 'GitHub'],
+      skills: ['Git', 'GitHub','GitLab'],
       color: 'text-red-500',
     },
     {
       title: 'Testing',
       icon: TestTube,
-      skills: ['Manual Testing', 'Playwright (Automation)'],
+      skills: ['Manual Testing', 'Playwright (Automation)','Jest (Testing)'],
       color: 'text-pink-500',
     },
     {
       title: 'Deployment & Cloud',
       icon: Smartphone,
-      skills: ['AWS (Basic)', 'Environment Configuration', 'Build & Deployment'],
+      skills: ['AWS (Basic)', 'Environment Configuration', 'Build & Deployment','CI/CD Pipeline'],
       color: 'text-yellow-500',
     },
   ]
